@@ -7,8 +7,4 @@ ReactDOM.render(
     <JobMarketGame />
   </React.StrictMode>,
   document.getElementById("root")
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 );
