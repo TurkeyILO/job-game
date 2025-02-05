@@ -50,19 +50,25 @@ const JobMarketGame = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 text-center relative">
+      {/* Small Turkey Flag */}
       <img 
         src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" 
         alt="Turkey Flag" 
-        className="absolute top-4 left-4 w-12 h-8" 
+        className="absolute top-6 left-6 w-12 h-8" 
       />
-      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4">{scenarios[currentStep].text}</h1>
-        <div className="space-y-3">
+
+      {/* Main Game Container */}
+      <div className="bg-white shadow-2xl rounded-3xl p-8 w-full max-w-lg">
+        <h1 className="text-3xl font-extrabold text-gray-900 mb-6">
+          {scenarios[currentStep].text}
+        </h1>
+
+        <div className="space-y-4">
           {scenarios[currentStep].options.map((option, index) => (
             <button
               key={index}
               onClick={() => setCurrentStep(option.next)}
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 w-full transition"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 w-full focus:outline-none"
             >
               {option.text}
             </button>
@@ -74,4 +80,3 @@ const JobMarketGame = () => {
 };
 
 export default JobMarketGame;
-
