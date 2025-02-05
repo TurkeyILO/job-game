@@ -75,16 +75,18 @@ const JobMarketGame = () => {
           What do I do?
         </button>
         {showMessage && (
-          <p className="mt-4 text-xl text-gray-600">
-            Let's discuss. See you in HNMUN's ILO! - Türkiye
-          </p>
+          <>
+            <p className="mt-4 text-xl text-gray-600">
+              Let's discuss. See you in HNMUN's ILO! - Türkiye
+            </p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/1280px-Flag_of_Turkey.svg.png"
+              alt="Turkey Flag"
+              className="mt-6 w-32 h-22" // This will make the flag medium-sized
+            />
+          </>
         )}
       </div>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/1280px-Flag_of_Turkey.svg.png"
-        alt="Turkey Flag"
-        className="mt-6 w-32 h-22" // This will make the flag medium-sized
-      />
     </div>
   );
 };
