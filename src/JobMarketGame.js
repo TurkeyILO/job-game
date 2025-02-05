@@ -54,34 +54,4 @@ const JobMarketGame = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 text-center">
-      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4">{scenarios[currentStep].text}</h1>
-        <div className="space-y-3">
-          {scenarios[currentStep].options.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentStep(option.next)}
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 w-full transition"
-            >
-              {option.text}
-            </button>
-          ))}
-        </div>
-        <button
-          onClick={handleWhatToDoClick}
-          className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 w-full transition"
-        >
-          What do I do?
-        </button>
-        {showMessage && (
-          <p className="mt-4 text-xl text-gray-600">
-            Let's discuss. See you in HNMUN's ILO!
-          </p>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default JobMarketGame;
+    <div className="
