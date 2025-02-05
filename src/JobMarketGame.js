@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom"; // Import the useHistory hook to navigate to a new page
 
 const scenarios = {
   start: {
@@ -32,21 +33,27 @@ const scenarios = {
     ]
   },
   loan: {
-    text: "Loan application gets stuck in paperwork. Try again?",
+    text: "According to the bank you aren't fit for a loan. Try again?",
     options: [{ text: "Restart", next: "start" }]
   },
   freelance: {
-    text: "Freelancing is tough without experience. Try again?",
+    text: "To compete in the market you need experience. Try again?",
     options: [{ text: "Restart", next: "start" }]
   },
   network: {
-    text: "Your connections help, but is this fair for everyone?",
+    text: "Connections? Do you have any?",
     options: [{ text: "Restart", next: "start" }]
   }
 };
 
 const JobMarketGame = () => {
   const [currentStep, setCurrentStep] = useState("start");
+  const history = useHistory(); // Use the history hook for navigation
+
+  // Function to handle navigation to the "What do I do?" page
+  const goToDiscussionPage = () => {
+    history.push("/discussion");
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 text-center">
@@ -63,6 +70,16 @@ const JobMarketGame = () => {
             </button>
           ))}
         </div>
+      </div>
+
+      {/* Button to navigate to the discussion page */}
+      <div className="mt-4">
+        <button
+          onClick={goToDiscussionPage}
+          className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 w-full transition"
+        >
+          What do I do?
+        </button>
       </div>
     </div>
   );
