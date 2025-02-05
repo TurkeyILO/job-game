@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom"; // Import the useHistory hook to navigate to a new page
 
 const scenarios = {
   start: {
@@ -48,11 +47,10 @@ const scenarios = {
 
 const JobMarketGame = () => {
   const [currentStep, setCurrentStep] = useState("start");
-  const history = useHistory(); // Use the history hook for navigation
+  const [showMessage, setShowMessage] = useState(false);
 
-  // Function to handle navigation to the "What do I do?" page
-  const goToDiscussionPage = () => {
-    history.push("/discussion");
+  const handleWhatToDoClick = () => {
+    setShowMessage(true);
   };
 
   return (
@@ -70,16 +68,17 @@ const JobMarketGame = () => {
             </button>
           ))}
         </div>
-      </div>
-
-      {/* Button to navigate to the discussion page */}
-      <div className="mt-4">
         <button
-          onClick={goToDiscussionPage}
-          className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 w-full transition"
+          onClick={handleWhatToDoClick}
+          className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 w-full transition"
         >
           What do I do?
         </button>
+        {showMessage && (
+          <p className="mt-4 text-xl text-gray-600">
+            Let's discuss. See you in HNMUN's ILO!
+          </p>
+        )}
       </div>
     </div>
   );
